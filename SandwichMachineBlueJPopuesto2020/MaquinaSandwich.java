@@ -8,7 +8,7 @@ class MaquinaSandwich{
     static final int CANTIDAD_BASE_QUESO = 3000;
     static final int CANTIDAD_BASE_MORTADELA_JAMON = 1000;
     static final int CANTIDAD_BASE_PAN = 100;
-     int cantidadQueso;
+      int cantidadQueso;
      int cantidadMortadela;
      int cantidadJamon;
      int cantidadPanBlanco;
@@ -26,6 +26,7 @@ class MaquinaSandwich{
     cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAMON;
     cantidadPanBlanco+=CANTIDAD_BASE_PAN;
     cantidadPanIntegral+=CANTIDAD_BASE_PAN;
+    this.ingresosPorVentas=this.ingresosPorVentas;
     }
     
      MaquinaSandwich(int precioCompraQueso, int precioCompraMortadela, int precioCompraJamon, int precioCompraPanBlanco, int precioCompraPanIntegral) {
@@ -40,11 +41,13 @@ class MaquinaSandwich{
     cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAMON;
     cantidadPanBlanco+=CANTIDAD_BASE_PAN;
     cantidadPanIntegral+=CANTIDAD_BASE_PAN;
-    }
+    this.ingresosPorVentas=this.ingresosPorVentas;
+}
 
     public int calcularPrecioVenta(int tipoSandwich, int tipoPan) {
         int precio=0;
         calcularCostoFabricacion(tipoSandwich,tipoPan);
+        
       if(tipoPan==1)
       {
         if(tipoSandwich==1)
@@ -89,8 +92,9 @@ class MaquinaSandwich{
         }
     }
     else return precio;
-    this.ingresosPorVentas+=precio;
-      return precio;
+      
+    return precio;
+      
     }
 
     public int calcularCostoFabricacion(int tipoSandwich, int tipoPan) {
@@ -165,7 +169,7 @@ class MaquinaSandwich{
           cantidadQueso-=15;
           cantidadMortadela-=10;
           cantidadPanBlanco-=1;
-          setIngresosPorVentas(ingresosPorVentas);
+          ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;
           
         }
@@ -173,82 +177,84 @@ class MaquinaSandwich{
       { cantidadQueso-=15;
           cantidadJamon-=10;
           cantidadPanBlanco-=1;
-          setIngresosPorVentas(ingresosPorVentas);
+         ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;}
        else if(tipoSandwich==3 && cantidadQueso>=30 && cantidadMortadela>=20 & cantidadPanBlanco>=2)
       {cantidadQueso-=30;
           cantidadMortadela-=20;
           cantidadPanBlanco-=2;
-          setIngresosPorVentas(ingresosPorVentas);
+          ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;}
         else if(tipoSandwich==4 && cantidadQueso>=30 && cantidadJamon>=20 & cantidadPanBlanco>=2) 
       {cantidadQueso-=30;
           cantidadJamon-=20;
           cantidadPanBlanco-=2;
-          setIngresosPorVentas(ingresosPorVentas);
+          ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;}
         else if(tipoSandwich==5 && cantidadQueso>=45 && cantidadMortadela>=30 & cantidadPanBlanco>=3)
       {cantidadQueso-=45;
           cantidadMortadela-=30;
           cantidadPanBlanco-=3;
-          setIngresosPorVentas(ingresosPorVentas);
+          ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;}
         else if(tipoSandwich==6  && cantidadQueso>=45 && cantidadJamon>=30 & cantidadPanBlanco>=3)
       {cantidadQueso-=45;
           cantidadJamon-=30;
           cantidadPanBlanco-=3;
-          setIngresosPorVentas(ingresosPorVentas);
+        ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;
         }
     }
     
     else if(tipoPan==2)
       {
-        if(tipoSandwich==1)
+        if(tipoSandwich==1 && cantidadQueso>=15 && cantidadMortadela>=10 & cantidadPanIntegral>=1)
       { cantidadQueso-=15;
           cantidadMortadela-=10;
           cantidadPanIntegral-=1;
-          setIngresosPorVentas(ingresosPorVentas);
+          ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;
           
         }
-       else if(tipoSandwich==2)
+       else if(tipoSandwich==2 && cantidadQueso>=15 && cantidadJamon>=10 & cantidadPanIntegral>=1)
       {cantidadQueso-=15;
           cantidadJamon-=10;
           cantidadPanIntegral-=1;
+          ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;
           
         }
-       else if(tipoSandwich==3)
+       else if(tipoSandwich==3 && cantidadQueso>=30 && cantidadMortadela>=20 & cantidadPanIntegral>=2)
       {cantidadQueso-=30;
           cantidadMortadela-=20;
           cantidadPanIntegral-=2;
-          setIngresosPorVentas(ingresosPorVentas);
+         ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;
         }
-        else if(tipoSandwich==4) 
+        else if(tipoSandwich==4&& cantidadQueso>=30 && cantidadJamon>=20 & cantidadPanIntegral>=2) 
       {cantidadQueso-=30;
           cantidadJamon-=20;
           cantidadPanIntegral-=2;
-          setIngresosPorVentas(ingresosPorVentas);
+          ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;
         }
-        else if(tipoSandwich==5)
+        else if(tipoSandwich==5 && cantidadQueso>=45 && cantidadMortadela>=30 & cantidadPanIntegral>=3)
       {cantidadQueso-=45;
           cantidadMortadela-=30;
           cantidadPanIntegral-=3;
-          setIngresosPorVentas(ingresosPorVentas);
+          ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;
         }
-        else if(tipoSandwich==6)
+        else if(tipoSandwich==6 && cantidadQueso>=45 && cantidadJamon>=30 & cantidadPanIntegral>=3)
       {cantidadQueso-=45;
           cantidadJamon-=30;
           cantidadPanIntegral-=3;
-          setIngresosPorVentas(ingresosPorVentas);
+          ingresosPorVentas+=calcularPrecioVenta(tipoSandwich, tipoPan);
           return v=true;
         }
     } 
     else return v=false;
+    
     return v;
 }
     /**Getter method cantidadQueso*/
@@ -359,29 +365,30 @@ class MaquinaSandwich{
     /**Setter method ingresosPorVentas*/
     public void setIngresosPorVentas(int ingresosPorVentas){
         
-        ingresosPorVentas+=this.ingresosPorVentas;
+        this.ingresosPorVentas=this.ingresosPorVentas;
+        
         
     }//end method setIngresosPorVentas
     
     /**Getter method ingresosPorVentas*/
     public int getIVA(){
-        return 19/100;
+        return ingresosPorVentas*19/100;
     }//end method getIngresosPorVentas
 
         /**Getter method ingresosPorVentas*/
     public int getCostosFijos(){
-        return 5/100;
+        return ingresosPorVentas*5/100;
     }//end method getIngresosPorVentas
     //End GetterSetterExtension Code
     
         /**Getter method ingresosPorVentas*/
     public int getRiesgos(){
-        return 1/100;
+        return ingresosPorVentas*1/100;
     }//end method getIngresosPorVentas
     
         /**Getter method ingresosPorVentas*/
     public int getGananciaNeta(){
-        return 10/100;
+        return ingresosPorVentas*10/100;
     }//end method getIngresosPorVentas
 //!
 }
