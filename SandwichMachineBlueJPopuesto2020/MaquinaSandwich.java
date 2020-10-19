@@ -5,9 +5,9 @@
  */
 class MaquinaSandwich{
     //Estas variables son para usarlas... complete el valor inicial
-    static final int CANTIDAD_BASE_QUESO = 3000;
-    static final int CANTIDAD_BASE_MORTADELA_JAMON = 1000;
-    static final int CANTIDAD_BASE_PAN = 100;
+    static final int CANTIDAD_BASE_QUESO = 15;
+    static final int CANTIDAD_BASE_MORTADELA_JAMON = 10;
+    static final int CANTIDAD_BASE_PAN = 1;
       int cantidadQueso;
      int cantidadMortadela;
      int cantidadJamon;
@@ -21,11 +21,11 @@ class MaquinaSandwich{
      int ingresosPorVentas;
 
     MaquinaSandwich() {
-    cantidadQueso+=CANTIDAD_BASE_QUESO;
-    cantidadMortadela+=CANTIDAD_BASE_MORTADELA_JAMON;
-    cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAMON;
-    cantidadPanBlanco+=CANTIDAD_BASE_PAN;
-    cantidadPanIntegral+=CANTIDAD_BASE_PAN;
+    cantidadQueso=3000;
+    cantidadMortadela=1000;
+    cantidadJamon=1000;
+    cantidadPanBlanco=100;
+    cantidadPanIntegral=100;
     this.ingresosPorVentas=this.ingresosPorVentas;
     }
     
@@ -36,11 +36,11 @@ class MaquinaSandwich{
       this.precioCompraJamon=precioCompraJamon;
       this.precioCompraPanBlanco=precioCompraPanBlanco;
       this.precioCompraPanIntegral=precioCompraPanIntegral;
-      cantidadQueso+=CANTIDAD_BASE_QUESO;
-    cantidadMortadela+=CANTIDAD_BASE_MORTADELA_JAMON;
-    cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAMON;
-    cantidadPanBlanco+=CANTIDAD_BASE_PAN;
-    cantidadPanIntegral+=CANTIDAD_BASE_PAN;
+      cantidadQueso=3000;
+    cantidadMortadela=1000;
+    cantidadJamon=1000;
+    cantidadPanBlanco=100;
+    cantidadPanIntegral=100;
     this.ingresosPorVentas=this.ingresosPorVentas;
 }
 
