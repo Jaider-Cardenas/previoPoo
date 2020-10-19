@@ -37,6 +37,45 @@ class MaquinaSandwich{
       this.precioCompraPanIntegral=precioCompraPanIntegral;
       cantidadQueso+=CANTIDAD_BASE_QUESO;
     cantidadMortadela+=CANTIDAD_BASE_MORTADELA_JAMON;
+    cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAM/**
+ *
+ * @author (Milton Jesús Vera Contreras - miltonjesusvc@ufps.edu.co)
+ * @version 0.000000000000001 :) --> Math.sin(Math.PI-Double.MIN_VALUE)
+ */
+class MaquinaSandwich{
+    //Estas variables son para usarlas... complete el valor inicial
+    static final int CANTIDAD_BASE_QUESO = 3000;
+    static final int CANTIDAD_BASE_MORTADELA_JAMON = 1000;
+    static final int CANTIDAD_BASE_PAN = 100;
+     int cantidadQueso;
+     int cantidadMortadela;
+     int cantidadJamon;
+     int cantidadPanBlanco;
+     int cantidadPanIntegral;
+     int precioCompraQueso;
+     int precioCompraMortadela;
+     int precioCompraJamon;
+     int precioCompraPanBlanco;
+     int precioCompraPanIntegral;
+     int ingresosPorVentas;
+
+    MaquinaSandwich() {
+    cantidadQueso+=CANTIDAD_BASE_QUESO;
+    cantidadMortadela+=CANTIDAD_BASE_MORTADELA_JAMON;
+    cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAMON;
+    cantidadPanBlanco+=CANTIDAD_BASE_PAN;
+    cantidadPanIntegral+=CANTIDAD_BASE_PAN;
+    }
+    
+     MaquinaSandwich(int precioCompraQueso, int precioCompraMortadela, int precioCompraJamon, int precioCompraPanBlanco, int precioCompraPanIntegral) {
+      //Complete
+      this.precioCompraQueso=precioCompraQueso;
+      this.precioCompraMortadela=precioCompraMortadela;
+      this.precioCompraJamon=precioCompraJamon;
+      this.precioCompraPanBlanco=precioCompraPanBlanco;
+      this.precioCompraPanIntegral=precioCompraPanIntegral;
+      cantidadQueso+=CANTIDAD_BASE_QUESO;
+    cantidadMortadela+=CANTIDAD_BASE_MORTADELA_JAMON;
     cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAMON;
     cantidadPanBlanco+=CANTIDAD_BASE_PAN;
     cantidadPanIntegral+=CANTIDAD_BASE_PAN;
@@ -89,6 +128,7 @@ class MaquinaSandwich{
         }
     }
     else return precio;
+    this.ingresosPorVentas+=precio;
       return precio;
     }
 
@@ -164,7 +204,7 @@ class MaquinaSandwich{
           cantidadQueso-=15;
           cantidadMortadela-=10;
           cantidadPanBlanco-=1;
-          setIngresosPorVentas();
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;
           
         }
@@ -172,26 +212,31 @@ class MaquinaSandwich{
       { cantidadQueso-=15;
           cantidadJamon-=10;
           cantidadPanBlanco-=1;
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;}
        else if(tipoSandwich==3 && cantidadQueso>=30 && cantidadMortadela>=20 & cantidadPanBlanco>=2)
       {cantidadQueso-=30;
           cantidadMortadela-=20;
           cantidadPanBlanco-=2;
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;}
         else if(tipoSandwich==4 && cantidadQueso>=30 && cantidadJamon>=20 & cantidadPanBlanco>=2) 
       {cantidadQueso-=30;
           cantidadJamon-=20;
           cantidadPanBlanco-=2;
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;}
         else if(tipoSandwich==5 && cantidadQueso>=45 && cantidadMortadela>=30 & cantidadPanBlanco>=3)
       {cantidadQueso-=45;
           cantidadMortadela-=30;
           cantidadPanBlanco-=3;
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;}
         else if(tipoSandwich==6  && cantidadQueso>=45 && cantidadJamon>=30 & cantidadPanBlanco>=3)
       {cantidadQueso-=45;
           cantidadJamon-=30;
           cantidadPanBlanco-=3;
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;
         }
     }
@@ -202,6 +247,7 @@ class MaquinaSandwich{
       { cantidadQueso-=15;
           cantidadMortadela-=10;
           cantidadPanIntegral-=1;
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;
           
         }
@@ -216,24 +262,28 @@ class MaquinaSandwich{
       {cantidadQueso-=30;
           cantidadMortadela-=20;
           cantidadPanIntegral-=2;
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;
         }
         else if(tipoSandwich==4) 
       {cantidadQueso-=30;
           cantidadJamon-=20;
           cantidadPanIntegral-=2;
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;
         }
         else if(tipoSandwich==5)
       {cantidadQueso-=45;
           cantidadMortadela-=30;
           cantidadPanIntegral-=3;
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;
         }
         else if(tipoSandwich==6)
       {cantidadQueso-=45;
           cantidadJamon-=30;
           cantidadPanIntegral-=3;
+          setIngresosPorVentas(ingresosPorVentas);
           return v=true;
         }
     } 
@@ -347,8 +397,9 @@ class MaquinaSandwich{
 
     /**Setter method ingresosPorVentas*/
     public void setIngresosPorVentas(int ingresosPorVentas){
-        ingresosPorVentas=calcularPrecioVenta();
-        this.ingresosPorVentas += ingresosPorVentas;
+        
+        ingresosPorVentas+=this.ingresosPorVentas;
+        
     }//end method setIngresosPorVentas
     
     /**Getter method ingresosPorVentas*/
