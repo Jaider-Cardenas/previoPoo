@@ -6,9 +6,9 @@
  */
 class MaquinaSandwich{
     //Estas variables son para usarlas... complete el valor inicial
-    static final int CANTIDAD_BASE_QUESO = 0;
-    static final int CANTIDAD_BASE_MORTADELA_JAMON = 0;
-    static final int CANTIDAD_BASE_PAN = 0;
+    static final int CANTIDAD_BASE_QUESO = 3000;
+    static final int CANTIDAD_BASE_MORTADELA_JAMON = 1000;
+    static final int CANTIDAD_BASE_PAN = 100;
 
 
     MaquinaSandwich() {
