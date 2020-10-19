@@ -1,45 +1,6 @@
 /**
  *
- * @author (Milton Jesús Vera Contreras - miltonjesusvc@ufps.edu.co)
- * @version 0.000000000000001 :) --> Math.sin(Math.PI-Double.MIN_VALUE)
- */
-class MaquinaSandwich{
-    //Estas variables son para usarlas... complete el valor inicial
-    static final int CANTIDAD_BASE_QUESO = 3000;
-    static final int CANTIDAD_BASE_MORTADELA_JAMON = 1000;
-    static final int CANTIDAD_BASE_PAN = 100;
-     int cantidadQueso;
-     int cantidadMortadela;
-     int cantidadJamon;
-     int cantidadPanBlanco;
-     int cantidadPanIntegral;
-     int precioCompraQueso;
-     int precioCompraMortadela;
-     int precioCompraJamon;
-     int precioCompraPanBlanco;
-     int precioCompraPanIntegral;
-     int ingresosPorVentas;
-
-    MaquinaSandwich() {
-    cantidadQueso+=CANTIDAD_BASE_QUESO;
-    cantidadMortadela+=CANTIDAD_BASE_MORTADELA_JAMON;
-    cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAMON;
-    cantidadPanBlanco+=CANTIDAD_BASE_PAN;
-    cantidadPanIntegral+=CANTIDAD_BASE_PAN;
-    }
-    
-     MaquinaSandwich(int precioCompraQueso, int precioCompraMortadela, int precioCompraJamon, int precioCompraPanBlanco, int precioCompraPanIntegral) {
-      //Complete
-      this.precioCompraQueso=precioCompraQueso;
-      this.precioCompraMortadela=precioCompraMortadela;
-      this.precioCompraJamon=precioCompraJamon;
-      this.precioCompraPanBlanco=precioCompraPanBlanco;
-      this.precioCompraPanIntegral=precioCompraPanIntegral;
-      cantidadQueso+=CANTIDAD_BASE_QUESO;
-    cantidadMortadela+=CANTIDAD_BASE_MORTADELA_JAMON;
-    cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAM/**
- *
- * @author (Milton Jesús Vera Contreras - miltonjesusvc@ufps.edu.co)
+ * @author (Jaider Stiven-1152048 y Julian Camilo Riveros 1152057)
  * @version 0.000000000000001 :) --> Math.sin(Math.PI-Double.MIN_VALUE)
  */
 class MaquinaSandwich{
