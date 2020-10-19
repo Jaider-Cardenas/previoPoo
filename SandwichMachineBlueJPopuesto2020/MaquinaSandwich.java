@@ -33,8 +33,28 @@ class MaquinaSandwich{
       this.precioCompraPanIntegral=precioCompraPanIntegral;
     }
 
-    public int calcularPrecioVenta(int tipoSandwich, int tipoPan) {
-      return 0;
+   public int calcularPrecioVenta(int tipoSandwich, int tipoPan) {
+        int precio=0;
+        calcularCostoFabricacion(tipoSandwich,tipoPan);
+      if(tipoPan==1)
+      {
+        if(tipoSandwich==1)
+      { precio= calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;}
+       else if(tipoSandwich==2)
+      { precio=calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        }
+       else if(tipoSandwich==3)
+      {precio= calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        }
+        else if(tipoSandwich==4) 
+      {precio=calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        }
+        else if(tipoSandwich==5)
+      {precio=calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        }
+        else if(tipoSandwich==6)
+      {precio=calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        }
     }
 
     public int calcularCostoFabricacion(int tipoSandwich, int tipoPan) {
