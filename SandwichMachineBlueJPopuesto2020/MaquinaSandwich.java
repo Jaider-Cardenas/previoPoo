@@ -1,4 +1,3 @@
-
 /**
  *
  * @author (Milton Jesús Vera Contreras - miltonjesusvc@ufps.edu.co)
@@ -22,18 +21,28 @@ class MaquinaSandwich{
      int ingresosPorVentas;
 
     MaquinaSandwich() {
-
+    cantidadQueso+=CANTIDAD_BASE_QUESO;
+    cantidadMortadela+=CANTIDAD_BASE_MORTADELA_JAMON;
+    cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAMON;
+    cantidadPanBlanco+=CANTIDAD_BASE_PAN;
+    cantidadPanIntegral+=CANTIDAD_BASE_PAN;
     }
- MaquinaSandwich(int precioCompraQueso, int precioCompraMortadela, int precioCompraJamon, int precioCompraPanBlanco, int precioCompraPanIntegral) {
+    
+     MaquinaSandwich(int precioCompraQueso, int precioCompraMortadela, int precioCompraJamon, int precioCompraPanBlanco, int precioCompraPanIntegral) {
       //Complete
       this.precioCompraQueso=precioCompraQueso;
       this.precioCompraMortadela=precioCompraMortadela;
       this.precioCompraJamon=precioCompraJamon;
       this.precioCompraPanBlanco=precioCompraPanBlanco;
       this.precioCompraPanIntegral=precioCompraPanIntegral;
+      cantidadQueso+=CANTIDAD_BASE_QUESO;
+    cantidadMortadela+=CANTIDAD_BASE_MORTADELA_JAMON;
+    cantidadJamon+=CANTIDAD_BASE_MORTADELA_JAMON;
+    cantidadPanBlanco+=CANTIDAD_BASE_PAN;
+    cantidadPanIntegral+=CANTIDAD_BASE_PAN;
     }
 
-   public int calcularPrecioVenta(int tipoSandwich, int tipoPan) {
+    public int calcularPrecioVenta(int tipoSandwich, int tipoPan) {
         int precio=0;
         calcularCostoFabricacion(tipoSandwich,tipoPan);
       if(tipoPan==1)
@@ -56,15 +65,181 @@ class MaquinaSandwich{
       {precio=calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
         }
     }
+    
+    else if(tipoPan==2)
+      {
+        if(tipoSandwich==1)
+      {precio= calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        
+        }
+       else if(tipoSandwich==2)
+      {precio= calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        }
+       else if(tipoSandwich==3)
+      {precio= calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        }
+        else if(tipoSandwich==4) 
+      {precio= calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        }
+        else if(tipoSandwich==5)
+      {precio= calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        }
+        else if(tipoSandwich==6)
+      {precio= calcularCostoFabricacion(tipoSandwich,tipoPan)+calcularCostoFabricacion(tipoSandwich,tipoPan)*35/100;
+        }
+    }
+    else return precio;
+      return precio;
+    }
 
     public int calcularCostoFabricacion(int tipoSandwich, int tipoPan) {
-      return 0;
+      int costoF=0;
+      getPrecioCompraQueso();
+      getPrecioCompraMortadela();
+      getPrecioCompraJamon();
+      getPrecioCompraPanBlanco();
+      getPrecioCompraPanIntegral();
+      if(tipoPan==1)
+      {
+        if(tipoSandwich==1)
+      {
+          
+          costoF= precioCompraQueso*15+precioCompraMortadela*10+precioCompraPanBlanco*1;
+          
+        }
+       else if(tipoSandwich==2)
+      { 
+          costoF= precioCompraQueso*15+precioCompraJamon*10+precioCompraPanBlanco*1;
+        }
+       else if(tipoSandwich==3)
+      {
+          costoF=precioCompraQueso*30+precioCompraMortadela*20+precioCompraPanBlanco*2;
+        }
+        else if(tipoSandwich==4) 
+      {
+          costoF=precioCompraQueso*30+precioCompraJamon*20+precioCompraPanBlanco*2;
+        }
+        else if(tipoSandwich==5)
+      {
+          costoF=precioCompraQueso*45+precioCompraMortadela*30+precioCompraPanBlanco*3;
+        }
+        else if(tipoSandwich==6)
+      {
+          costoF=precioCompraQueso*45+precioCompraJamon*30+precioCompraPanBlanco*3;
+        }
+    }
+    
+    else if(tipoPan==2)
+      {
+        if(tipoSandwich==1)
+      { costoF= precioCompraQueso*15+precioCompraMortadela*10+precioCompraPanIntegral*1;
+          
+        }
+       else if(tipoSandwich==2)
+      {costoF= precioCompraQueso*15+precioCompraJamon*10+precioCompraPanIntegral*1;
+        }
+       else if(tipoSandwich==3)
+      {costoF= precioCompraQueso*30+precioCompraMortadela*20+precioCompraPanIntegral*2;
+        }
+        else if(tipoSandwich==4) 
+      {costoF= precioCompraQueso*30+precioCompraJamon*20+precioCompraPanIntegral*2;
+        }
+        else if(tipoSandwich==5)
+      {costoF=precioCompraQueso*45+precioCompraMortadela*30+precioCompraPanIntegral*3;
+        }
+        else if(tipoSandwich==6)
+      { costoF=precioCompraQueso*45+precioCompraJamon*30+precioCompraPanIntegral*3;
+        }
+    }
+    else return costoF;
+    return costoF;
     }
 
     public boolean registrarVenta(int tipoSandwich, int tipoPan) {
-      return false;
+      boolean v=false;
+        if(tipoPan==1)
+      {
+        if(tipoSandwich==1 && cantidadQueso>=15 && cantidadMortadela>=10 & cantidadPanBlanco>=1)
+      {
+          cantidadQueso-=15;
+          cantidadMortadela-=10;
+          cantidadPanBlanco-=1;
+          setIngresosPorVentas();
+          return v=true;
+          
+        }
+       else if(tipoSandwich==2 && cantidadQueso>=15 && cantidadJamon>=10 & cantidadPanBlanco>=1)
+      { cantidadQueso-=15;
+          cantidadJamon-=10;
+          cantidadPanBlanco-=1;
+          return v=true;}
+       else if(tipoSandwich==3 && cantidadQueso>=30 && cantidadMortadela>=20 & cantidadPanBlanco>=2)
+      {cantidadQueso-=30;
+          cantidadMortadela-=20;
+          cantidadPanBlanco-=2;
+          return v=true;}
+        else if(tipoSandwich==4 && cantidadQueso>=30 && cantidadJamon>=20 & cantidadPanBlanco>=2) 
+      {cantidadQueso-=30;
+          cantidadJamon-=20;
+          cantidadPanBlanco-=2;
+          return v=true;}
+        else if(tipoSandwich==5 && cantidadQueso>=45 && cantidadMortadela>=30 & cantidadPanBlanco>=3)
+      {cantidadQueso-=45;
+          cantidadMortadela-=30;
+          cantidadPanBlanco-=3;
+          return v=true;}
+        else if(tipoSandwich==6  && cantidadQueso>=45 && cantidadJamon>=30 & cantidadPanBlanco>=3)
+      {cantidadQueso-=45;
+          cantidadJamon-=30;
+          cantidadPanBlanco-=3;
+          return v=true;
+        }
     }
-
+    
+    else if(tipoPan==2)
+      {
+        if(tipoSandwich==1)
+      { cantidadQueso-=15;
+          cantidadMortadela-=10;
+          cantidadPanIntegral-=1;
+          return v=true;
+          
+        }
+       else if(tipoSandwich==2)
+      {cantidadQueso-=15;
+          cantidadJamon-=10;
+          cantidadPanIntegral-=1;
+          return v=true;
+          
+        }
+       else if(tipoSandwich==3)
+      {cantidadQueso-=30;
+          cantidadMortadela-=20;
+          cantidadPanIntegral-=2;
+          return v=true;
+        }
+        else if(tipoSandwich==4) 
+      {cantidadQueso-=30;
+          cantidadJamon-=20;
+          cantidadPanIntegral-=2;
+          return v=true;
+        }
+        else if(tipoSandwich==5)
+      {cantidadQueso-=45;
+          cantidadMortadela-=30;
+          cantidadPanIntegral-=3;
+          return v=true;
+        }
+        else if(tipoSandwich==6)
+      {cantidadQueso-=45;
+          cantidadJamon-=30;
+          cantidadPanIntegral-=3;
+          return v=true;
+        }
+    } 
+    else return v=false;
+    return v;
+}
     /**Getter method cantidadQueso*/
     public int getCantidadQueso(){
         return this.cantidadQueso;
@@ -172,28 +347,29 @@ class MaquinaSandwich{
 
     /**Setter method ingresosPorVentas*/
     public void setIngresosPorVentas(int ingresosPorVentas){
-        this.ingresosPorVentas = ingresosPorVentas;
+        ingresosPorVentas=calcularPrecioVenta();
+        this.ingresosPorVentas += ingresosPorVentas;
     }//end method setIngresosPorVentas
     
     /**Getter method ingresosPorVentas*/
     public int getIVA(){
-        return 16/100;
+        return 19/100;
     }//end method getIngresosPorVentas
 
         /**Getter method ingresosPorVentas*/
     public int getCostosFijos(){
-        return 0;
+        return 5/100;
     }//end method getIngresosPorVentas
     //End GetterSetterExtension Code
     
         /**Getter method ingresosPorVentas*/
     public int getRiesgos(){
-        return 0;
+        return 1/100;
     }//end method getIngresosPorVentas
     
         /**Getter method ingresosPorVentas*/
     public int getGananciaNeta(){
-        return 0;
+        return 10/100;
     }//end method getIngresosPorVentas
 //!
 }
