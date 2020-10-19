@@ -27,6 +27,11 @@ class MaquinaSandwich{
 
     MaquinaSandwich(int precioCompraQueso, int precioCompraMortadela, int precioCompraJamon, int precioCompraPanBlanco, int precioCompraPanIntegral) {
       //Complete
+      this.precioCompraQueso=precioCompraQueso;
+      this.precioCompraMortadela=precioCompraMortadela;
+      this.precioCompraJamon=precioCompraJamon;
+      this.precioCompraPanBlanco=precioCompraPanBlanco;
+      this.precioCompraPanIntegral=precioCompraPanIntegral;
     }
 
     public int calcularPrecioVenta(int tipoSandwich, int tipoPan) {
