@@ -21,8 +21,12 @@ class MaquinaSandwich{
     static final int precioCompraPanIntegral;
     static final int ingresosPorVentas;
     
-    
-    
+    MaquinaSandiwch(int queso, int jamon, int mortadela, int panIntegral, int panBlanco)
+        this.cantidadQueso = queso+CANTIDAD_BASE_QUESO;
+        this.cantidadMortadela=mortadela+CANTIDAD_BASE_MORTADELA_JAMON;
+        this.cantidadJamon=Jamon+CANTIDAD_BASE_MORTADELA_JAMON;
+        this.cantidadPanBlanco=panBlanco+CANTIDAD_BASE_PAN;
+        this.cantidadPanIntegral=panIntegral+CANTIDAD_BASE_PAN;
 
     MaquinaSandwich() {
 
